@@ -418,7 +418,7 @@ class CrowSPairsRunner:
                     "direction": direction,
                     "bias_type": bias_type,
                 }
-                df_data = df_data.append(df_item, ignore_index=True)
+                df_data = df_data._append(df_item, ignore_index=True)
 
         return df_data
 
