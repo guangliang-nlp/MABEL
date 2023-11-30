@@ -200,7 +200,7 @@ def parse_file(gold_file, predictions_file):
     file_name = os.path.basename(predictions_file)
     experiment_id = os.path.splitext(file_name)[0]
     d[experiment_id] = overall
-
+    print(d)
     with open(output_file, "w+") as f:
         json.dump(d, f, indent=2)
 
