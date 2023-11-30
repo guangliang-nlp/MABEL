@@ -2,6 +2,7 @@ import argparse
 import json
 import os
 
+import torch
 import transformers
 
 from benchmark.intrinsic.stereoset.runner import StereoSetRunner
@@ -27,7 +28,7 @@ parser.add_argument(
     "--model_name_or_path",
     action="store",
     type=str,
-    default="bert-base-uncased",
+    default="None",
     help="HuggingFace model name or path (e.g., bert-base-uncased). Checkpoint from which a "
     "model is instantiated.",
 )
@@ -77,11 +78,13 @@ if __name__ == "__main__":
     print(f" - seed: {args.seed}")
 
     model = transformers.AutoModelForMaskedLM.from_pretrained(
-        args.model_name_or_path, cache_dir=args.cache_dir
+        args.model, cache_dir=args.cache_dir
     )
+    if args.model_name_or_path != "None":
+        model.load_state_dict(torch.load(args.model_name_or_path, map_location="cuda"),strict=False)
     model.eval()
     tokenizer = transformers.AutoTokenizer.from_pretrained(
-        args.model_name_or_path, cache_dir=args.cache_dir
+        args.model, cache_dir=args.cache_dir
     )
 
     runner = StereoSetRunner(
