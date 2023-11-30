@@ -200,11 +200,10 @@ def parse_file(gold_file, predictions_file):
     file_name = os.path.basename(predictions_file)
     experiment_id = os.path.splitext(file_name)[0]
     d[experiment_id] = overall
-    print("__________")
-    print(d)
-    print("__________")
+
     with open(output_file, "w+") as f:
         json.dump(d, f, indent=2)
+
 
 
 def _extract_split_from_file_path(file_path):
@@ -218,10 +217,10 @@ def _extract_split_from_file_path(file_path):
 if __name__ == "__main__":
     args = parser.parse_args()
     args.predictions_file = f"{args.persistent_dir}/stereoset/result.json"
-    print("Evaluating StereoSet files:")
-    print(f" - predictions_file: {args.predictions_file}")
-    print(f" - predictions_dir: {args.predictions_dir}")
-    print(f" - output_file: {args.output_file}")
+    #print("Evaluating StereoSet files:")
+    #print(f" - predictions_file: {args.predictions_file}")
+    #print(f" - predictions_dir: {args.predictions_dir}")
+    #print(f" - output_file: {args.output_file}")
 
     if args.predictions_dir is not None:
         predictions_dir = args.predictions_dir
