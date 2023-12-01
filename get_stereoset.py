@@ -5,7 +5,7 @@ import transformers
 transformers.logging.set_verbosity_error()
 ratios = ['0.0', '0.25', '0.5', '0.75', '1.0']
 tasks = ['mnli', 'jigsaw-gender', 'snli']
-models = ['bert-base-uncased', 'roberta-base']
+models = ['bert-base-uncased']#, 'roberta-base']
 methods = ['vanillia', 'debiased']
 
 if __name__ == "__main__":
