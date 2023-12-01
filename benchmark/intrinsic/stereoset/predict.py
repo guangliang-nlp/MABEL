@@ -82,6 +82,7 @@ if __name__ == "__main__":
     )
     if args.model_name_or_path != "None":
         model.load_state_dict(torch.load(args.model_name_or_path, map_location="cuda"),strict=False)
+    model.to('cuda')
     model.eval()
     tokenizer = transformers.AutoTokenizer.from_pretrained(
         args.model, cache_dir=args.cache_dir
