@@ -23,4 +23,4 @@ if __name__ == "__main__":
 
                         model_file = model_file.replace("*",str(i))
                         print(model_file)
-                        os.system("python -m python -m benchmark.intrinsic.crows.eval --model_name_or_path {0} --model {1}".format(model_file, model))
+                        os.system("python -m benchmark.intrinsic.crows.eval --model_name_or_path {0} --model {1}".format(model_file, model))
