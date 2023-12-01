@@ -47,10 +47,10 @@ if __name__ == "__main__":
     print(f" - bias_type: {args.bias_type}")
 
     # Load model and tokenizer.
-    model = transformers.AutoModelForMaskedLM.from_pretrained(args.model_name_or_path)
+    model = transformers.AutoModelForMaskedLM.from_pretrained(args.model)
     model.eval()
 
-    tokenizer = transformers.AutoTokenizer.from_pretrained(args.model_name_or_path)
+    tokenizer = transformers.AutoTokenizer.from_pretrained(args.model)
 
     runner = CrowSPairsRunner(
         model=model,
