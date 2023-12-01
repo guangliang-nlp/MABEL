@@ -70,12 +70,12 @@ if __name__ == "__main__":
     if "rob" in args.model_name_or_path:  # roberta case
         args.model = "RobertaForMaskedLM"
 
-    print("Running StereoSet:")
-    print(f" - persistent_dir: {args.persistent_dir}")
-    print(f" - model: {args.model}")
-    print(f" - model_name_or_path: {args.model_name_or_path}")
-    print(f" - batch_size: {args.batch_size}")
-    print(f" - seed: {args.seed}")
+    #print("Running StereoSet:")
+    #print(f" - persistent_dir: {args.persistent_dir}")
+    #print(f" - model: {args.model}")
+    #print(f" - model_name_or_path: {args.model_name_or_path}")
+    #print(f" - batch_size: {args.batch_size}")
+    #print(f" - seed: {args.seed}")
 
     model = transformers.AutoModelForMaskedLM.from_pretrained(
         args.model, cache_dir=args.cache_dir

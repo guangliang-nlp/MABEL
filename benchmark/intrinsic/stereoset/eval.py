@@ -227,8 +227,8 @@ if __name__ == "__main__":
         if args.predictions_dir[-1] != "/":
             predictions_dir = args.predictions_dir + "/"
         for prediction_file in glob.glob(predictions_dir + "*.json"):
-            print()
-            print(f"Evaluating {prediction_file}...")
+            #print()
+            #print(f"Evaluating {prediction_file}...")
             parse_file(f"{args.persistent_dir}/stereoset/test.json", prediction_file)
     else:
         parse_file(f"{args.persistent_dir}/stereoset/test.json", args.predictions_file)
