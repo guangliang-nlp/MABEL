@@ -11,10 +11,10 @@ methods = ['vanillia', 'debiased']
 if __name__ == "__main__":
 
     prefix = "/scratch0/liuguan5/models/cda/iclr24/"
+    for model in models:
+        for ratio in ratios:
+            for task in tasks:
 
-    for ratio in ratios:
-        for task in tasks:
-            for model in models:
                 for method in methods:
 
                     for i in [1,42,100]:
