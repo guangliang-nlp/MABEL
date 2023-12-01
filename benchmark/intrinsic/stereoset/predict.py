@@ -67,8 +67,8 @@ parser.add_argument(
 if __name__ == "__main__":
     args = parser.parse_args()
 
-    if "rob" in args.model_name_or_path:  # roberta case
-        args.model = "RobertaForMaskedLM"
+    #if "rob" in args.model_name_or_path:  # roberta case
+    #    args.model = "RobertaForMaskedLM"
 
     #print("Running StereoSet:")
     #print(f" - persistent_dir: {args.persistent_dir}")
