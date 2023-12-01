@@ -17,6 +17,4 @@ if __name__ == "__main__":
                     for i in [1,42,100]:
                         model_file = model_file.replace("{}",str(i))
                         print(model_file)
-                        os.system(
-                            "python -m benchmark.intrinsic.stereoset.predict --model_name_or_path {0} --model {1} && python -m benchmark.intrinsic.stereoset.eval".format(
-                                model_file, method))
+                        #os.system("python -m benchmark.intrinsic.stereoset.predict --model_name_or_path {0} --model {1} && python -m benchmark.intrinsic.stereoset.eval".format(model_file, method))
