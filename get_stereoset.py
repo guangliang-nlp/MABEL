@@ -21,10 +21,10 @@ for method in methods:
             model_file = prefix + "test." + task + "." + method +"." +model + ".{}"
             for seed in [1, 42, 100]:
                 model_file = model_file.replace("{}", str(seed))
-            if method == 'ours':
-                model_file = model_file + "0.01"
-            model_file = model_file + ".ckpt"
-            print(model_file)
-            #os.system(
-            #    "python -m benchmark.intrinsic.stereoset.predict --model_name_or_path {} --model {} && python -m benchmark.intrinsic.stereoset.eval".format(
-            #        model_file, model))
+                if method == 'ours':
+                    model_file = model_file + ".0.01"
+                model_file = model_file + ".ckpt"
+                print(model_file)
+                #os.system(
+                #    "python -m benchmark.intrinsic.stereoset.predict --model_name_or_path {} --model {} && python -m benchmark.intrinsic.stereoset.eval".format(
+                #        model_file, model))
