@@ -33,7 +33,12 @@ if __name__ == "__main__":
     methods = ['debiased', 'normal', 'ours', 'ear']  # 'vanillia',
     prefix = "/scratch0/liuguan5/models/cda/iclr24/"
 
-    for model_ in glob.glob(r'/scratch0/liuguan5/models/cda/iclr24/test*ours*bert-base-uncased*.ckpt'):
+    for model_ in glob.glob(r'/scratch0/liuguan5/models/cda/iclr24/test*ours*bert-base-uncased*1*.ckpt'):
+        print(model_)
+        os.system(
+            "python -m benchmark.intrinsic.stereoset.predict --model_name_or_path {0} --model {1} && python -m benchmark.intrinsic.stereoset.eval".format(
+                model_,'bert-base-uncased'))
+    for model_ in glob.glob(r'/scratch0/liuguan5/models/cda/iclr24/test*ours*bert-base-uncased*1*.ckpt'):
         print(model_)
         os.system(
             "python -m benchmark.intrinsic.stereoset.predict --model_name_or_path {0} --model {1} && python -m benchmark.intrinsic.stereoset.eval".format(
