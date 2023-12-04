@@ -18,8 +18,8 @@ prefix = "/scratch0/liuguan5/models/cda/iclr24/"
 for method in methods:
     for task in tasks:
         for model in models:
-            model_file = prefix + "test." + task + "." + method +"." +model + ".{}"
             for seed in [1, 42, 100]:
+                model_file = prefix + "test." + task + "." + method + "." + model + ".{}"
                 model_file = model_file.replace("{}", str(seed))
                 if method == 'ours':
                     model_file = model_file + ".0.01"
