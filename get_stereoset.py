@@ -24,7 +24,7 @@ for method in methods:
                 if method == 'ours':
                     model_file = model_file + ".0.01"
                 model_file = model_file + ".ckpt"
-
+                print(model_file)
                 os.system(
                     "python -m benchmark.intrinsic.stereoset.predict --model_name_or_path {} --model {} && python -m benchmark.intrinsic.stereoset.eval".format(
                         model_file, model))
